@@ -1,88 +1,166 @@
-body {
-  font-family: sans-serif;
-  margin: 2rem;
+/* =====================================
+   GLOBAL / RESET
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.category_list_container {
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* =====================================
+   HEADER / NAVIGATION  (ALLE SIDER)
+===================================== */
+
+.site_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.main_nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main_nav a {
+  font-weight: bold;
+}
+
+
+/* =====================================
+   INDEX.HTML  (body class="index_page")
+===================================== */
+
+.index_page .category_list_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
 }
 
-.category {
-  background: #ccc;
+.index_page .category {
+  background: #eee;
   padding: 2rem;
   text-align: center;
-  text-decoration: none;
-  color: black;
 }
 
-.product_list_container {
+
+/* =====================================
+   PRODUKTLISTE.HTML (body class="productlist_page")
+===================================== */
+
+.productlist_page .product_list_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
-.product_card {
-  display: block;
+.productlist_page .product_card {
   border: 1px solid #ddd;
   padding: 1rem;
-  text-decoration: none;
-  color: black;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.product_card img {
-  width: 100%;
+.productlist_page .product_card h3 {
+  font-size: 1rem;
 }
 
-.badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: grey;
-  color: white;
-  padding: 4px 8px;
+.productlist_page .brand {
+  color: grey;
 }
 
-.sale .price {
+.productlist_page .price {
+  font-weight: bold;
+}
+
+.productlist_page .old_price {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.productlist_page .nedsat .price {
   color: red;
 }
 
-.old_price {
-  text-decoration: line-through;
-  color: grey;
-}
-
-.soldout {
+.productlist_page .udsolgt {
   opacity: 0.5;
 }
 
-.product_container {
+.productlist_page .badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+
+/* =====================================
+   PRODUKT.HTML (body class="product_page")
+===================================== */
+
+.product_page .product_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin: 2rem;
 }
 
-.product_image img {
-  width: 100%;
+.product_page .product_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.old_price {
+.product_page .old_price {
   text-decoration: line-through;
   color: grey;
 }
 
-.price {
+.product_page .price {
   color: red;
   font-weight: bold;
 }
 
-.soldout_label {
+.product_page .soldout_label {
   background: grey;
   color: white;
-  display: inline-block;
   padding: 4px 8px;
+  display: inline-block;
   margin-top: 1rem;
+}
+
+
+/* =====================================
+   GENERELLE UI-KLASSER (KLAR TIL JS SENERE)
+===================================== */
+
+.udsolgt {
+  opacity: 0.5;
+}
+
+.nedsat .price {
+  color: red;
 }
