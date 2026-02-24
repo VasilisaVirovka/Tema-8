@@ -33,16 +33,47 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+.logo a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .main_nav {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .main_nav a {
-  font-weight: bold;
+  position: relative;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 4px;
+  transition: 0.2s ease;
+}
+
+/* Hover underline animation */
+.main_nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: black;
+  transition: 0.25s ease;
+}
+
+.main_nav a:hover::after {
+  width: 100%;
+}
+
+.main_nav a:hover {
+  color: black;
 }
 
 
@@ -163,4 +194,40 @@ a {
 
 .nedsat .price {
   color: red;
+}
+
+/* =====================================
+   FOOTER (ALLE SIDER)
+===================================== */
+
+.site_footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eee;
+}
+
+.footer_inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer_col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer_col h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer_col a {
+  color: #333;
+  transition: 0.2s ease;
+}
+
+.footer_col a:hover {
+  color: black;
 }
